@@ -1,7 +1,11 @@
 export default {
   testEnvironment: 'node',
+  preset: 'ts-jest',
   moduleFileExtensions: ['ts', 'js'],
-  testMatch: ['**/test/**/*.spec.(ts|js)'],
+  testMatch: ['**/src/**/*.spec.(ts|js)'],
+  moduleNameMapper: {
+    '^@/(.*)$': '<rootDir>/src/$1',
+  },
   transform: {
     '^.+\\.(ts|tsx)$': [
       'ts-jest',
